@@ -54,7 +54,7 @@ class Window(QDialog):
     def plot(self): 
         fname = QFileDialog.getOpenFileName(self, 'Open file', "",
                                             "All Files(*);; Python Files(*.py);; CSV Files(*.csv);; Excel Files(*.xlsx)", '/home')   
-        f = open(fname[0],'r')
+        f = open(fname[0],'r',encoding='UTF8')
         d = f.read()
         data = d.split('\n')
         data.pop(0)
