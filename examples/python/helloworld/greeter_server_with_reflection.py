@@ -27,6 +27,12 @@ class Greeter(helloworld_pb2_grpc.GreeterServicer):
 
     def SayHello(self, request, context):
         return helloworld_pb2.HelloReply(message='Hello, %s!' % request.name)
+    
+class MLpredict(helloworld_pb2_grpc.MLpredictServicer):
+
+    def Predict(self,request,context):
+        print(request.data)
+        return helloworld_pb2.PredictResult(res='Predict result is : %s' % request.name)
 
 
 def serve():

@@ -25,6 +25,21 @@ package helloworld;
 service Greeter {
   // Sends a greeting
   rpc SayHello (HelloRequest) returns (HelloReply) {}
+  
+}
+
+service MLpredict{
+  //make new column and Data analysis
+  rpc Predict (DataPredict) returns (PredictResult) {}
+
+}
+
+message DataPredict {
+  string data = 1;
+}
+
+message PredictResult {
+  string res = 1;
 }
 
 // The request message containing the user's name.
